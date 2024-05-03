@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="/capacity"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <p>Students Number: <%=studentNum%></p>
+      <ul>
+        <% for (let path of pathways) { if (path !== 'student_id') { %>
+        <li>
+          <label for="<%=path%>"> <%= path %></label>
+          <input
+            id="<%=path%>"
+            name="<%=path%>"
+            type="number"
+            required
+            step="1"
+            min="0"
+          />
+        </li>
+        <% }} %>
+      </ul>
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
