@@ -74,10 +74,9 @@ const getKeyByValue = (object, value) => {
 };
 
 const autoAllocation = (dataArr, pathways) => {
-  console.log(dataArr);
   const pathwayNum = Object.keys(pathways).length;
   dataArr.map((entry) => {
-    for (let i = 1; i < pathwayNum; i++) {
+    for (let i = 1; i <= pathwayNum; i++) {
       const choiceName = getKeyByValue(entry, i);
       const allocatedNum = dataArr.filter(
         (entry) => entry.pathway_id === choiceName
@@ -92,8 +91,6 @@ const autoAllocation = (dataArr, pathways) => {
       }
     }
   });
-
-  console.log(dataArr);
 
   return dataArr;
 };
